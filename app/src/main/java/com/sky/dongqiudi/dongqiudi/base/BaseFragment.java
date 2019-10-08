@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.sky.dongqiudi.dongqiudi.R;
 import com.sky.dongqiudi.dongqiudi.api.NormalConfig;
+import com.sky.dongqiudi.dongqiudi.utils.LoadingDialogWithContent;
 
 import static com.scwang.smartrefresh.layout.util.DensityUtil.px2dp;
 
@@ -38,7 +40,7 @@ public class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        new LoadingDialogWithContent();
+        new LoadingDialogWithContent(getActivity(), getString(R.string.loading));
         return super.onCreateView(inflater, container, savedInstanceState);
 
     }
