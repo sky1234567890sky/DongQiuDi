@@ -13,7 +13,12 @@ import android.widget.Toast;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.sky.dongqiudi.dongqiudi.R;
 import com.sky.dongqiudi.dongqiudi.broadcast.NetStatusBroadCast;
+import com.sky.dongqiudi.dongqiudi.utils.LoadingDialogWithContent;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 import static com.scwang.smartrefresh.layout.util.DensityUtil.px2dp;
 import static com.sky.dongqiudi.dongqiudi.utils.NetworkUtils.NETWORK_MOBILE;
@@ -25,13 +30,33 @@ public class BaseActivity extends AppCompatActivity implements NetStatusBroadCas
     private BaseApp mApplication;
     private LinearLayoutManager mManager;
     private NetStatusBroadCast mNetStatusBroadCast;
-
+    private LoadingDialogWithContent mDialog;
+    private Unbinder mBind;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mBind = ButterKnife.bind(this);
         mApplication = (BaseApp) getApplication();
+        mDialog = new LoadingDialogWithContent(this, getString(R.string.loading));
+//        setContentView(getLayoutId());
+        initView();
+        initData();
+    }
+    protected void initData() {
 
     }
+
+    protected void initView() {
+
+    }
+
+    public void showLoadingDialog(){
+        if (!mDialog.isShowing())mDialog.show();
+    }public void hideLoadingDialog(){
+        if (mDialog.isShowing())mDialog.hide();
+    }
+
+
 
     public void initRecycleView(RecyclerView recyclerView, RefreshLayout refreshLayout) {
         mManager = new LinearLayoutManager(this);
@@ -99,6 +124,8 @@ public class BaseActivity extends AppCompatActivity implements NetStatusBroadCas
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        mBind.unbind();
+        if (mDialog!=null)
+            if (mDialog.isShowing())mDialog.cancel();
     }
 }

@@ -22,27 +22,29 @@ import com.sky.dongqiudi.dongqiudi.utils.LoadingDialogWithContent;
 import static com.scwang.smartrefresh.layout.util.DensityUtil.px2dp;
 
 public class BaseFragment extends Fragment {
-
     private LinearLayoutManager mManager;
-
+    private LoadingDialogWithContent mDialog;
     @Override
     public void onDestroy() {
         super.onDestroy();
-
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-
+        if (mDialog!=null)
+            if (mDialog.isShowing())mDialog.cancel();
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        new LoadingDialogWithContent(getActivity(), getString(R.string.loading));
+        mDialog = new LoadingDialogWithContent(getActivity(), getString(R.string.loading));
         return super.onCreateView(inflater, container, savedInstanceState);
-
+    }
+    public void showLoadingDialog() {
+        if (!mDialog.isShowing()) mDialog.show();
+    }
+    public void hideLoadingDialog() {
+        if (mDialog.isShowing()) mDialog.dismiss();
     }
 
     public void showToast(String content) {

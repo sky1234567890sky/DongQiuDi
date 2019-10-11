@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="grey_loading">#868686</color>
+    <color name="c_e34536">#e34536</color>
+    <color name="c_000000">#000000</color>
+    <color name="blue">#1150D9</color>
+    <color name="c_ffffff">#ffffff</color>
+    <color name="c_101010">#101010</color>
+    <color name="seekbar_bg">#5677FC</color>
 </resources>

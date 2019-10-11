@@ -4,6 +4,7 @@
     package="com.sky.dongqiudi.dongqiudi">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:name=".base.BaseApp"
         android:allowBackup="true"
@@ -12,14 +13,21 @@
         android:roundIcon="@mipmap/acticity_refresh"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity android:name=".activity.MainActivity">
+
+        </activity>
+        <activity android:name=".activity.SearchResultActivity" />
+        <activity android:name=".activity.AllActivity" />
+        <activity android:name=".activity.home_ui.DiveLogActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

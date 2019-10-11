@@ -49,11 +49,11 @@ task clean(type: Delete) {
 
 //j
 ext {
-    compileSdkVersion = 27
-    buildToolsVersion = '27.0.3'
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
     targetSdkVersion = compileSdkVersion
-    supportVsersion = '27.1.1'
-    minSdkVersion = 16
+    supportVsersion = '28.0.0'
+    minSdkVersion = 19
     versionCode = 181
     versionName = '1.8.1'
     constraint = '1.1.2'

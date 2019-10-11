@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">懂球帝</string>
     <string name="loading">加载中...</string>
+    <string name="add_log">添加日志</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dive_data">潜水数据</string>
+    <string name="dive_data_cishu">潜水次数</string>
+    <string name="max_depth">最大深度</string>
+    <string name="min_temperature">最低溫度</string>
+    <string name="mean_depth">平均深度</string>
+    <string name="mean_temperature">平均温度</string>
+    <string name="dive_time">潜水时间</string>
+    <string name="selector_time">时间选择</string>
+    <string name="dive_site">潜水地点</string>
+    <string name="dive_idea">想法</string>
+    <string name="idea_hint">关于这次潜水的回忆，点击添加......</string>
+    <string name="upload_photos">上传照片</string>
+    <string name="tv_attention">只支持.jpg格式</string>
+    <string name="weight">配重</string>
+    <string name="environment">环境</string>
+    <string name="enter_h2o">入水方式</string>
+    <string name="scenery">景物</string>
+    <string name="weather">天气</string>
+    <string name="qiping_xiaohao">气瓶消耗</string>
+    <string name="O2">空气</string>
+    <string name="flow">水流</string>
+    <string name="can_seeing">能见度</string>
+    <string name="zoo">动物</string>
+    <string name="save">保存</string>
+    <string name="freedom_dive">自由潜水</string>
+    <string name="scuba_dive">水肺潜水</string>
 </resources>
